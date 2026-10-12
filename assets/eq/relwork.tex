@@ -1,0 +1,24 @@
+\documentclass[border=8pt,12pt]{standalone}
+\usepackage{times}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\begin{document}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{What people build} & \textbf{What is scored} & \textbf{Faithful?} \\
+\midrule
+Proof-assistant benchmarks and provers & compiles, proof closes & \textcolor{black!60}{not checked} \\
+\quad\textcolor{black!60}{miniF2F, ProofNet, LeanDojo, DeepSeek-Prover, \ldots} & & \\
+Solver-in-the-loop reasoning & final answer right & \textcolor{black!60}{not checked} \\
+\quad\textcolor{black!60}{Logic-LM, LINC, \ldots} & & \\
+Specs from requirements or code & matches code, or a human reads it & \textcolor{black!60}{not checked} \\
+\quad\textcolor{black!60}{nl2spec, Clover, \ldots} & & \\
+Checks of meaning & learned score, agreement, human study & estimated \\
+\quad\textcolor{black!60}{Li 2024, FormalAlign 2025, ReForm 2026, Wang 2026} & & \\
+\addlinespace[3pt]
+\textbf{This talk} & \textbf{formula against its own roundtrip} & \textbf{equivalence decided} \\
+ & & \textbf{by a solver} \\
+\bottomrule
+\end{tabular}
+\end{document}

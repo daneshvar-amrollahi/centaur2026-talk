@@ -1,0 +1,20 @@
+\documentclass[border=8pt,12pt]{standalone}
+\usepackage{times}
+\usepackage{booktabs,multirow}
+\usepackage[table]{xcolor}
+\begin{document}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{@{}llcccc@{\hskip 18pt}ccc@{}}
+\toprule
+& & \multicolumn{4}{c}{\textbf{Equivalence rate (\%)}} & \multicolumn{3}{c}{\textbf{LLM calls per repaired rule}} \\
+\cmidrule(lr){3-6} \cmidrule(l){7-9}
+\textbf{Domain} & \textbf{Judge} & No repair & Random & Regenerate & Scoped & Random & Regenerate & Scoped \\
+\midrule
+\multirow{2}{*}{Traffic}  & GPT    & 61.3 & 78.7 & 84.7 & \cellcolor{red!15}82.7 & 9.8 & 10.5 & \cellcolor{red!15}14.6 \\
+                          & Claude &      &      &      & \cellcolor{green!25}\textbf{90.7} & & & \cellcolor{green!25}\textbf{7.9} \\
+\midrule
+\multirow{2}{*}{Wildlife} & GPT    & 67.1 & 77.6 & 85.5 & \cellcolor{red!15}78.9 & 12.8 & 11.6 & \cellcolor{red!15}26.4 \\
+                          & Claude &      &      &      & \cellcolor{green!25}\textbf{94.7} & & & \cellcolor{green!25}\textbf{6.1} \\
+\bottomrule
+\end{tabular}
+\end{document}

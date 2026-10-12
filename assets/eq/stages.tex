@@ -1,0 +1,25 @@
+\documentclass[border=8pt]{standalone}
+\usepackage{times}
+\usepackage{inconsolata}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,xcolor}
+\begin{document}
+\Large
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}l@{\qquad}l@{}}
+\toprule
+$\Sigma$ & the target formalism \\
+$\mathcal{X}$ & natural-language strings \\
+$\mathcal{Y}_{\Sigma}$ & well-formed formulas of $\Sigma$ \\
+\midrule
+$T_1 : \mathcal{X} \rightarrow \mathcal{Y}_{\Sigma}$ & formalize \\
+$T_2 : \mathcal{Y}_{\Sigma} \rightarrow \mathcal{X}$ & back to natural language \\
+$T_3 : \mathcal{X} \rightarrow \mathcal{Y}_{\Sigma}$ & formalize again \\
+\midrule
+check & $T_1(x) \;\equiv_{\Sigma}\; T_3\big(T_2(T_1(x))\big)$ \\
+as a solver query & \texttt{(assert (not (= y\_orig y\_rt)))} \\
+ & \texttt{(check-sat)} \\
+ & \textcolor{black!60}{with $y^{\mathrm{orig}} = T_1(x)$ and $y^{\mathrm{rt}} = T_3(T_2(T_1(x)))$} \\
+\bottomrule
+\end{tabular}
+\end{document}

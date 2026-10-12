@@ -1,0 +1,19 @@
+\documentclass[border=8pt,12pt]{standalone}
+\usepackage{inconsolata}
+\usepackage[T1]{fontenc}
+\usepackage{listings,xcolor}
+\lstset{basicstyle=\ttfamily,columns=fullflexible,keepspaces=true,
+  commentstyle=\color{black!60}, comment=[l]{--}}
+\begin{document}
+\begin{lstlisting}
+-- "n is a positive integer"
+
+def A (n : Nat) : Prop := 0 < n
+
+def B (n : Int) : Prop := 0 < n
+
+-- both faithful
+-- different types,
+-- no check relates them
+\end{lstlisting}
+\end{document}

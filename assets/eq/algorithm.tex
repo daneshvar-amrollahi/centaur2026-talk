@@ -1,0 +1,24 @@
+\documentclass[border=8pt,varwidth=15cm,12pt]{standalone}
+\usepackage{times}
+\usepackage{amsmath,amssymb}
+\usepackage[noend]{algorithmic}
+\begin{document}
+\begin{algorithmic}[1]
+\REQUIRE natural-language input $x \in \mathcal{X}$, formalism $\Sigma$, budget $K$
+\STATE $y^{\mathrm{orig}} \leftarrow T_1(x)$;\quad $x' \leftarrow T_2(y^{\mathrm{orig}})$;\quad $y^{\mathrm{rt}} \leftarrow T_3(x')$
+\FOR{$k = 1$ to $K$}
+    \IF{$y^{\mathrm{orig}} \equiv_{\Sigma} y^{\mathrm{rt}}$}
+        \STATE \textbf{return} SUCCESS, $(y^{\mathrm{orig}}, x', y^{\mathrm{rt}})$
+    \ENDIF
+    \STATE $(i, e) \leftarrow D(x, y^{\mathrm{orig}}, x', y^{\mathrm{rt}})$ \COMMENT{first failed stage, explanation}
+    \IF{$i = 1$}
+        \STATE $y^{\mathrm{orig}} \leftarrow R_1(x, y^{\mathrm{orig}}, e)$;\quad $x' \leftarrow T_2(y^{\mathrm{orig}})$;\quad $y^{\mathrm{rt}} \leftarrow T_3(x')$
+    \ELSIF{$i = 2$}
+        \STATE $x' \leftarrow R_2(y^{\mathrm{orig}}, x', e)$;\quad $y^{\mathrm{rt}} \leftarrow T_3(x')$
+    \ELSE
+        \STATE $y^{\mathrm{rt}} \leftarrow R_3(x', y^{\mathrm{rt}}, e)$
+    \ENDIF
+\ENDFOR
+\STATE \textbf{return} FAILURE, $(y^{\mathrm{orig}}, x', y^{\mathrm{rt}})$
+\end{algorithmic}
+\end{document}

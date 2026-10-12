@@ -1,0 +1,12 @@
+.DS_Store
+
+# LaTeX build logs and intermediates
+*.log
+*.aux
+*.out
+*.synctex.gz
+
+# Throwaway test deck and scratch files
+exports/test.key
+exports/test/
+/nli-cats.tex

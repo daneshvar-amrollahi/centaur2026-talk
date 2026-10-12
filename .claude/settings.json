@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(osascript:*)",
+      "Bash(pdflatex:*)",
+      "Bash(pdftoppm:*)",
+      "Bash(cp:*)",
+      "Bash(mkdir:*)"
+    ]
+  }
+}

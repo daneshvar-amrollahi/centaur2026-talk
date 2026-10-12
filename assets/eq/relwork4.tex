@@ -1,0 +1,26 @@
+\documentclass[border=8pt,12pt]{standalone}
+\usepackage{times}
+\usepackage{array,xcolor,colortbl}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{L}{>{\centering\arraybackslash}m{1.7cm}}
+\begin{document}
+\renewcommand{\arraystretch}{1.25}
+\setlength{\tabcolsep}{4pt}
+\setlength{\extrarowheight}{2pt}
+\setlength{\arrayrulewidth}{0.6pt}
+\arrayrulecolor{black!35}
+\begin{tabular}{|L|C{3.5cm}|C{3.4cm}|C{3.1cm}|C{3.9cm}|}
+\hline
+\rowcolor{black!8}
+ & \textbf{Proof assistants}\newline\textcolor{black!60}{miniF2F, LeanDojo} & \textbf{Solver in the loop}\newline\textcolor{black!60}{Logic-LM, LINC} & \textbf{Specs from text}\newline\textcolor{black!60}{nl2spec, Clover} & \textbf{Faithfulness checks}\newline\textcolor{black!60}{FormalAlign, ReForm} \\
+\hline
+\cellcolor{black!4}\textcolor{black!55}{Checks} & the proof compiles and closes & solver's answer against the answer key & the spec against the code & the formula against the text \\
+\hline
+\cellcolor{black!4}\textcolor{black!55}{Decided by} & the proof assistant & the answer key & a verifier, or a human & a trained scorer, candidate agreement, or a human \\
+\hline
+\cellcolor{black!4}\textcolor{black!55}{Faithful to text?} & \cellcolor{red!10}not checked & \cellcolor{red!10}not checked & \cellcolor{orange!14}left to a human & \cellcolor{orange!14}estimated \\
+\hline
+\cellcolor{black!4}\textcolor{black!55}{This talk} & \multicolumn{3}{c|}{} & \cellcolor{green!18}\textbf{decided by a solver} \\
+\hline
+\end{tabular}
+\end{document}

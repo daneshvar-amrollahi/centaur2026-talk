@@ -1,0 +1,29 @@
+\documentclass[border=8pt,12pt]{standalone}
+\usepackage{times}
+\usepackage{array,xcolor,colortbl,multirow}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{L}{>{\centering\arraybackslash}m{1.6cm}}
+\newcolumntype{T}{>{\centering\arraybackslash\columncolor{blue!10}}m{2.6cm}}
+\begin{document}
+\renewcommand{\arraystretch}{1.25}
+\setlength{\tabcolsep}{4pt}
+\setlength{\extrarowheight}{2pt}
+\setlength{\arrayrulewidth}{0.6pt}
+\arrayrulecolor{black!35}
+\begin{tabular}{|L|C{2.5cm}|C{2.5cm}|C{2.5cm}|C{2.6cm}|T|}
+\hline
+\rowcolor{black!8}
+ & & & & \multicolumn{2}{c|}{\cellcolor{black!8}\textbf{Faithfulness checks}} \\
+\rowcolor{black!8}
+ & \multirow{-2}{*}{\textbf{\shortstack{Proof\\assistants}}} & \multirow{-2}{*}{\textbf{\shortstack{Solver in\\the loop}}} & \multirow{-2}{*}{\textbf{\shortstack{Specs\\from text}}} & \textcolor{black!60}{prior work} & \cellcolor{blue!20}\textbf{this talk} \\
+\hline
+\cellcolor{black!4}\textcolor{black!55}{Checks} & proof closes & final answer & spec vs code & formula vs text & formula vs its roundtrip \\
+\hline
+\cellcolor{black!4}\textcolor{black!55}{Checked by} & proof assistant & answer key & verifier or human & trained scorer or human & SMT solver \\
+\hline
+\cellcolor{black!4}\textcolor{black!55}{Ground truth} & none & answer key & a human, or none & labeled pairs or a human & \cellcolor{green!22}\textbf{none} \\
+\hline
+\cellcolor{black!4}\textcolor{black!55}{Examples} & \textcolor{black!60}{miniF2F, LeanDojo} & \textcolor{black!60}{Logic-LM, LINC} & \textcolor{black!60}{nl2spec, Clover} & \textcolor{black!60}{FormalAlign, ReForm} & \textcolor{black!60}{Our Work} \\
+\hline
+\end{tabular}
+\end{document}

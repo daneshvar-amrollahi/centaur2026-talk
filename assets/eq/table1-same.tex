@@ -1,0 +1,19 @@
+\documentclass[border=8pt,12pt]{standalone}
+\usepackage{times}
+\usepackage{booktabs,multirow}
+\begin{document}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{@{}llcccc@{\hskip 18pt}ccc@{}}
+\toprule
+& & \multicolumn{4}{c}{\textbf{Equivalence rate (\%)}} & \multicolumn{3}{c}{\textbf{LLM calls per repaired rule}} \\
+\cmidrule(lr){3-6} \cmidrule(l){7-9}
+\textbf{Domain} & \textbf{LLM} & No repair & Random & Regenerate & Scoped & Random & Regenerate & Scoped \\
+\midrule
+\multirow{2}{*}{Traffic}  & Claude & 44.7 & 66.7 & 64.7 & \textbf{85.3} & 12.3 & 19.9 & \textbf{7.2} \\
+                          & GPT    & 61.3 & 78.7 & \textbf{84.7} & 82.7 & \textbf{9.8} & 10.5 & 14.6 \\
+\midrule
+\multirow{2}{*}{Wildlife} & Claude & 62.3 & 77.9 & 81.8 & \textbf{85.7} & 11.7 & 12.2 & \textbf{9.5} \\
+                          & GPT    & 67.1 & 77.6 & \textbf{85.5} & 78.9 & 12.8 & \textbf{11.6} & 26.4 \\
+\bottomrule
+\end{tabular}
+\end{document}
